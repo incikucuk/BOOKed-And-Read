@@ -1,4 +1,9 @@
+import { useOktaAuth } from "@okta/okta-react";
+import { Link } from "react-router-dom";
+
 export const Heros = () => {
+  const { authState } = useOktaAuth();
+
   return (
     <div>
       <div className="d-none d-lg-block">
@@ -8,7 +13,7 @@ export const Heros = () => {
           </div>
         </div>
         <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
-          <div className="ml-2">
+          <div className="ml-4 right container">
             <h1>What have you been reading?</h1>
             <p className="lead">
               The library team would love to know what you have been reading.
@@ -16,8 +21,19 @@ export const Heros = () => {
               quibusdam. Sed iure similique obcaecati eius ullam maiores
               blanditiis quaerat reiciendis.
             </p>
-            <a className="btn main-color btn-lg text-white" href="#">
-              Sign up</a>
+            {authState?.isAuthenticated ? (
+              <Link
+                type="button"
+                className="btn main-color btn-lg text-white"
+                to="serch"
+              >
+                Explore top books
+              </Link>
+            ) : (
+              <Link className="btn main-color btn-lg text-white" to="/login">
+                Sign up
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -45,12 +61,25 @@ export const Heros = () => {
           <div className="m-2">
             <div className="col-image-left"></div>
             <div className="mt-2"></div>
-            <h1>Our collection is changing</h1>
+            <h1>What have you been reading?</h1>
             <p className="lead">
               Collection of this seasons.. Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Rem, quibusdam. Sed iure similique
               obcaecati eius ullam maiores blanditiis quaerat reiciendis.
             </p>
+            {authState?.isAuthenticated ? (
+              <Link
+                type="button"
+                className="btn main-color btn-lg text-white"
+                to="serch"
+              >
+                Explore top books
+              </Link>
+            ) : (
+              <Link className="btn main-color btn-lg text-white" to="/login">
+                Sign up
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,17 @@
+import { useOktaAuth } from "@okta/okta-react";
 import { NavLink } from "react-router-dom";
+import { SpinnerLoading } from "../Utils/SpinnerLoading";
 
 export const Navbar = () => {
+  const {oktaAuth,authState} = useOktaAuth();
+
+  if(!authState){
+    return <SpinnerLoading/>
+  }
+
+  const handleLogout = async () => oktaAuth.signOut();
+  console.log(authState);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark main-color py-3">
