@@ -11,21 +11,23 @@ export const LibraryServices = () => {
             Cant'find what you are looking for?
           </h1>
           <p className="lead">Lorem ipsum dolor sit amet.</p>
-
+          <div className="d-grid gap-2 justify-content-md-start mb-4 mb-lg-3">
           {authState?.isAuthenticated ? (
             <Link
               type="button"
-              className="btn main-color btn-lg text-white"
-              to="serch"
+              className="btn main-color btn-lg btn-lg px-4 me-md-2 fw-bold text-white"
+              to="#"
             >
-              Explore top books
+              Library Services
             </Link>
           ) : (
             <Link className="btn main-color btn-lg text-white" to="/login">
               Sign up
             </Link>
           )}
+          </div>
         </div>
+        <div className="col-lg-4 offset-lg-1 shadow-lg lost-image"></div>
       </div>
     </div>
   );

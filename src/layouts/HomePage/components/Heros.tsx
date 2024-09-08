@@ -13,7 +13,7 @@ export const Heros = () => {
           </div>
         </div>
         <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
-          <div className="ml-4 right container">
+          <div className="ml-2">
             <h1>What have you been reading?</h1>
             <p className="lead">
               The library team would love to know what you have been reading.
@@ -25,7 +25,7 @@ export const Heros = () => {
               <Link
                 type="button"
                 className="btn main-color btn-lg text-white"
-                to="serch"
+                to="search"
               >
                 Explore top books
               </Link>
@@ -71,7 +71,7 @@ export const Heros = () => {
               <Link
                 type="button"
                 className="btn main-color btn-lg text-white"
-                to="serch"
+                to="search"
               >
                 Explore top books
               </Link>
@@ -81,6 +81,13 @@ export const Heros = () => {
               </Link>
             )}
           </div>
+        </div>
+        <div className="m-2">
+              <div className="col-image-right"></div>
+              <div className="mt-2">
+                <h1>Our collection is always changing!</h1>
+                <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.</p>
+              </div>
         </div>
       </div>
     </div>
